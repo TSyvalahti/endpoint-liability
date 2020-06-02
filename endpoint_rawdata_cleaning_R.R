@@ -19,6 +19,7 @@ explanations <- read_excel("endpoint_explanations.xlsx")
 # Filter explanation data so that only rows where include is NA are included.
 explanations <- explanations %>%
   filter(is.na(INCLUDE)) %>%
+  filter(LEVEL!=1 & LEVEL!=2) %>%
   select('NAME')
 # Make a vector of explanation columns
 explanations <- c(explanations$NAME)
